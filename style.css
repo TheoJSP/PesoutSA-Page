@@ -61,9 +61,15 @@
 .navbar.sticky .menu li a:hover{
     color:#fff
 }
+.menu-btn{
+    color:#fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
 
 /*HOME*/
-
 .home{
     display: flex;
     background: url("img/bg2.jpg")no-repeat center;
@@ -118,17 +124,15 @@
 section{
     padding:100px 0 ;
 }
-
-.about{
+.about , .tec{
     font-family:"Poppins", sans-serif;
 }
-.about .about-content {
+.about .about-content , .tec .tec-content{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
-
 section .title {
     position: relative;
     text-align: center;
@@ -148,7 +152,6 @@ section .title {
      background: #111;
      transform: translateX(-50%);
  }
-
  section .title::after{
     position: absolute;
     bottom: -24px;
@@ -161,11 +164,14 @@ section .title {
 } 
 
 /* ABOUT*/
+.about{
+    background:url("img/444.png")no-repeat center;
+    
+}
 
 .about .about-content .left{
     width:45%;
 }
-
 .about .about-content .left img{
     height: 400px;
     width: 450px;
@@ -174,41 +180,124 @@ section .title {
 
     
  }
-
 .about .about-content .right{
     width:55%;
+    padding: 10px;
 }
-
 .about .about-content .right .text{
     text-align: center;
     font-size: 25px;
     font-weight: 600;
     margin-bottom: 10;
 }
-
 .about .about-content .right .text span{
     color: #252EFF  ;
 }
-
 .about .about-content .right p{
-    
     text-align: center;
 }
 
+/*Tec*/
+
+.tec{
+    background:url("img/444.png")no-repeat center;
+}
+.tec .tec-content .left{
+    width:45%;
+}
+.tec .tec-content .left img{
+    height: 500px;
+    width: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+
+.tec .tec-content .right{
+    width:55%;
+    padding: 10px;
+}
+
+.tec .tec-content .title-b{
+    background-color: #252EFF;
+    border-radius: 9px;
+    display: flex;
+    color: #fff;
+    padding: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    align-items: center;
+    justify-content: space-between;
+}
+.tec .tec-content .icon{
+    position: relative;
+    width: 14px;
+}
+
+.tec .tec-content .icon::before, .tec .tec-content .icon::after{
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 3px;
+    background-color: #fff;
+    top: -1.5px
+}
+
+.tec .tec-content .icon::after{
+    transform: rotate(90deg);
+    transition: 1s ease;
+}
+
+.tec .tec-content .text{
+    background-color:rgba(37, 46, 255, 0.7 );
+    border-radius: 6px;
+    color: #fff;
+    line-height: 26px;
+    margin: 6px 0;
+    opacity: 0;
+    height: 0;
+}
+
+.tec .tec-content .item:target .text{
+    height: auto;
+    opacity: 1;
+    padding: 20px;
+    margin: 12px 0 ;
+  
+}
+
+.tec .tec-content .item:target .icon::after{
+    transform: rotate(0);
+}
+
+.tec .tec-content .item .text:target .text{
+    background-color: #ffffff60;
+    line-height: 26px;
+    margin: 6px 0;
+    opacity: 0;
+    height: 0;
+}
 
 /*RESPONSIVE MEDIA*/
 @media (max-width: 1300px){
+
     .home .max-width{
         margin-left: 0px;
+    }
+    .tec, .about{
+        background: none;
     }
 
 }
 @media (max-width: 1104px){
-    .about .about-content .left img{
+    .about .about-content .left img, .tec .tec-content .left img{
         height: 350px;
         width: 350px;
        
      }
+    
 
 }
 @media (max-width: 991px){
@@ -216,10 +305,15 @@ section .title {
         padding: 0 50px;
 
     }
+    .menu-btn{
+        display: block;
+        z-index:999;
+    }
 
-}
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
 
-@media (max-width: 947px){
     .navbar .menu{
         position: fixed;
         height: 100vh;
@@ -244,6 +338,7 @@ section .title {
         margin:20px 0;
         font-size: 25px;
     }
+
     .home .home-content .text-2{
         font-size: 70px;
     }
@@ -254,6 +349,7 @@ section .title {
         font-size: 23px;
         padding: 10px 30px;
     }
+    
     .max-width{
         max-width: 800px;
 
@@ -271,9 +367,28 @@ section .title {
     .about .about-content .right{
         flex:100%
     }
+
+    .tec .tec-content .column{
+        width: 100%;
+
+    }
+    .tec .tec-content .left{
+        display:flex;
+        justify-content:center;
+        margin: 20px ;
+
+    }
+    .tec .tec-content .right{
+        flex:100% ;
+        margin: 20px;
+    }
+    
+}
+@media (max-width: 947px){
+    
+    
   
 }
-
 @media (max-width: 690px){
     .max-width{
         padding:0 23;
@@ -292,7 +407,6 @@ section .title {
  
 
 }
-
 @media (max-width: 500px){
 
     .home .home-content .text-2{

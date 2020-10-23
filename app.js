@@ -7,4 +7,9 @@ $(document).ready(()=>{
             $(".navbar").removeClass("sticky")
         }
     });
+    //NAVBAR SCRIPT
+    $(".menu-btn").click(()=>{
+        $(".navbar .menu").toggleClass("active");
+        $(".menu-btn i").toggleClass("active");
+    })
 })
