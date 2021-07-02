@@ -8,17 +8,13 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 
 
 ### Pre-requisitos 📋
-
-_Que cosas necesitas para instalar el software y como instalarlas_
-
 ```
-Nada 
+Previos conocimientos
 ```
 ## Construido con 🛠️
 
 Actualizacion de la pagina http://www.pesout.com.ar/
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
 
 * HTML 
 * CSS
